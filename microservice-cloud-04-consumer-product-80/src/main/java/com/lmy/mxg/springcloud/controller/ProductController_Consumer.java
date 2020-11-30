@@ -19,7 +19,9 @@ import java.util.List;
 @RestController
 public class ProductController_Consumer {
 
-    private static final String REST_URL_PREFIX = "http://127.0.0.1:8001";
+    // private static final String REST_URL_PREFIX = "http://127.0.0.1:8001";
+    /** 修改为Eureka注册中心的地址 */
+    private static final String REST_URL_PREFIX = "http://MICROSERVICE-PRODUCT";
 
     @Autowired
     private RestTemplate restTemplate;

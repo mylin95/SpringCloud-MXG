@@ -1,5 +1,6 @@
 package com.lmy.mxg.springcloud;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -10,11 +11,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @Author: linmy
  * @Date: 2020/11/22
  */
-@EnableEurekaClient //向服务注册中心进行注册
+@EnableEurekaClient
+@MapperScan("com.lmy.mxg.springcloud.mapper")
 @SpringBootApplication
-public class ProductConsumer_80 {
+public class ProductProvider_8002 {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductConsumer_80.class, args);
+        SpringApplication.run(ProductProvider_8002.class, args);
     }
 }

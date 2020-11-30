@@ -9,6 +9,7 @@
 /out
 /build
 /logs
+/target
 
 .gradle/
 .settings/
