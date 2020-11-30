@@ -14,6 +14,7 @@
         <module>../microservice-cloud-05-eureka-6001</module>
         <module>../microservice-cloud-05-eureka-6002</module>
         <module>../microservice-cloud-06-provider-product-8002</module>
+        <module>../microservice-cloud-07-consumer-product-feign</module>
     </modules>
     <!-- 手动指定 -->
     <packaging>pom</packaging>

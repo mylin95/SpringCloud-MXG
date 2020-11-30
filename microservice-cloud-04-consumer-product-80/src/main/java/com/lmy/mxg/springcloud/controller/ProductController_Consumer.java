@@ -2,10 +2,7 @@ package com.lmy.mxg.springcloud.controller;
 
 import com.lmy.mxg.springcloud.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -27,7 +24,7 @@ public class ProductController_Consumer {
     private RestTemplate restTemplate;
 
     @PostMapping("/consumer/product/add")
-    public Boolean add(Product product) {
+    public Boolean add(@RequestBody Product product) {
         String url = REST_URL_PREFIX + "/product/add";
         return restTemplate.postForObject(url, product, Boolean.class);
     }
