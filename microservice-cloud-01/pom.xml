@@ -15,6 +15,8 @@
         <module>../microservice-cloud-05-eureka-6002</module>
         <module>../microservice-cloud-06-provider-product-8002</module>
         <module>../microservice-cloud-07-consumer-product-feign</module>
+        <module>../microservice-cloud-08-provider-product-hystrix-8001</module>
+        <module>../microservice-cloud-09-hystrix-dashboard-9001</module>
     </modules>
     <!-- 手动指定 -->
     <packaging>pom</packaging>

@@ -3,7 +3,10 @@ package com.lmy.mxg.springcloud.entities;
 import java.io.Serializable;
 
 /**
- * @Auther: 梦学谷
+ * @Package: com.lmy.mxg.springcloud.entities
+ * @Description:
+ * @Author: linmy
+ * @Date: 2020/11/22
  */
 public class Product implements Serializable {//必须序列化
     private Long pid; //主键

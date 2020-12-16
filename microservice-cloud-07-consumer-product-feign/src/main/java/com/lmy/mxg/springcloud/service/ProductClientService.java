@@ -10,13 +10,15 @@ import java.util.List;
  * @Package: com.lmy.mxg.springcloud.service
  * @Description:
  *  SpringCloud对Feign进行了增强兼容了SpringMVC的注解 ，我们在使用SpringMVC的注解时需要注意：
- * 1、@FeignClient接口方法有基本类型参数在参数必须加@PathVariable("XXX") 或 @RequestParam("XXX")
- * 2、@FeignClient接口方法返回值为复杂对象时，此类型必须有无参构造方法。
+ * 1、@FeignClient接口方法有 基本类型参数 在参数必须加@PathVariable("XXX") 或 @RequestParam("XXX")
+ * 2、@FeignClient接口方法 返回值为复杂对象 时，此类型必须有无参构造方法（eg:Product实体类必须有无参构造方法）。
+ * value的作用：指定调用的服务 MICROSERVICE-PRODUCT
+ * fallback的作用：指定熔断处理类，如果被调用的方法处理异常，就会交给熔断处理类中的方法进行处理
  * @Author: linmy
  * @Date: 2020/11/30
  */
-//指定调用的服务 MICROSERVICE-PRODUCT
-@FeignClient(value = "MICROSERVICE-PRODUCT")
+
+@FeignClient(value = "MICROSERVICE-PRODUCT", fallback = ProductClientServiceFallBack.class)
 public interface ProductClientService {
 
     @RequestMapping(value = "/product/get/{id}",method = RequestMethod.GET)
