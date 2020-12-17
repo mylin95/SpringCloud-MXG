@@ -9,7 +9,7 @@
 /out
 /build
 /logs
-/target
+/microservice-cloud*/target
 
 .gradle/
 .settings/
