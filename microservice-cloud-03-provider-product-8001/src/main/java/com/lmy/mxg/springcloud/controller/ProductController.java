@@ -2,6 +2,8 @@ package com.lmy.mxg.springcloud.controller;
 
 import com.lmy.mxg.springcloud.entities.Product;
 import com.lmy.mxg.springcloud.service.ProductService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +21,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @ApiOperation(value = "添加商品", notes = "添加商品")
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
     public boolean add(@RequestBody Product product) {
         return productService.add(product);

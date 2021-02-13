@@ -72,7 +72,7 @@ public class LoginFilter extends ZuulFilter {
             // 拒绝访问
             context.setSendZuulResponse(false);
             // 设置响应码
-            context.setResponseStatusCode(200);
+            context.setResponseStatusCode(401);
             try {
                 context.getResponse().getWriter().write("token is empty...");
             } catch (IOException e) {
