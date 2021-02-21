@@ -35,11 +35,15 @@
 - bootstrap.yml文件中配置必要的配置中心信息
 
 ### microservice-cloud-13-eureka-config-6001模块: 整合Config配置中心的Eureka服务端
--- 整合Eureka配置、整合配置中心的配置（bootstrap.yml）
+- 整合Eureka配置、整合配置中心的配置（bootstrap.yml）
 
-### microservice-cloud-14-product-config-8001模块：Eureka客户端整合Config配置中心的 Product生产者
--- 整合Eureka配置、整合配置中心的配置（bootstrap.yml）
--- 参考microservice-cloud-03-provider-product模块，构建项目
+### microservice-cloud-14-product-config-8001模块：Eureka客户端整合Config配置中心的 Product生产者 && 整合消息总线组件Bus
+- 整合Eureka配置、整合配置中心的配置（bootstrap.yml）
+- 参考microservice-cloud-03-provider-product模块，构建项目
+- 消息总线：1.修改配置中心的配置后，不需要重启项目，**只需要刷新配置**: 通过POST请求[URL](http://localhost:8001/actuator/bus-refresh/)
+- 消息总线的配置自动刷新-**属性变量**：1.需要在实体类上方加上注解@RefreshScope 2.访问POST请求[URL](http://localhost:8001/actuator/bus-refresh/)
+- 消息总线的配置自动刷新-**普通数据源**：直接修改spring.datasource中的配置就可以生效，不需要额外配置
+- 消息总线的配置自动刷新-**druid数据源**：1.需要配置数据源配置类，见DruidConfig.java 2.添加配置后，修改spring.datasource中的配置才可以生效
 
 
 
