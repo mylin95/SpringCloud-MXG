@@ -4,4 +4,5 @@ spring:
       name: microservice-config-eureka #github上的配置名称，注意没有yml后缀名
       profile: dev #本次访问的环境配置项
       label: master #远程库的分支名
-      uri: http://localhost:5001 #Config配置中心地址，通过它获取microservice-configeureka.yml配置信息
+#      uri: http://localhost:5001 #Config配置中心地址，通过它获取microservice-configeureka.yml配置信息
+      uri: http://192.168.10.4:5001 #Config配置中心地址，虚拟机中部署用的这个ip
